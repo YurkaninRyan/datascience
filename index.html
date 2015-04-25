@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Can You Survive?</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./public/style.css">
+	<link rel="stylesheet" href="./public/reset.css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="wrapper">
+		<!--TODO add a top part-->
+		<div class="logo">Can You Survive?</div>
+		<!--TODO add buttons-->
+		<main>
+			<div class="maincontainer--outer">
+				<div class="maincontainer--inner">
+					<form method="evaluate.py" action="post" id="info">
+						<input type="text" name="age" class="input__form" placeholder="Age" min="1" max="200" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Age'"><br>
+						<select name="gender" class="input__form" required>
+							<option value="" disabled selected>Select a gender</option>
+						  	<option value="Male">Male</option>
+						  	<option value="Female">Female</option>
+						  	<option value="Non-binary">Non-binary</option>
+						</select><br>
+						<select name="class" class="input__form"  required>
+							<option value="" disabled selected>Select a class</option>
+						  	<option value="1">High Class</option>
+						  	<option value="2">Middle Class</option>
+						  	<option value="3">Lower Class</option>
+						</select><br>
+						<button class="input__button">submit</button>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>Ryan Yurkanin | Ramanjit Khakh | David Yoon | Ian Speers</footer>
+	</div>
+</body>
+</html>

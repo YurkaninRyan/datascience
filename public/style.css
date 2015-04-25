@@ -1,0 +1,142 @@
+/*Variables*/
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  font-size: 100%; }
+
+*, *:after, *:before {
+  box-sizing: inherit; }
+
+img, video {
+  box-sizing: content-box; }
+
+::-webkit-input-placeholder {
+  color: white; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white; }
+
+:-ms-input-placeholder {
+  color: white; }
+
+button:focus {
+  outline: 0 !important; }
+
+input:focus {
+  outline: 0 !important; }
+
+select:focus {
+  outline: 0 !important; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: url("Titanic.jpg"), linear-gradient(to right, #999, red), linear-gradient(to right, blue, green), linear-gradient(to right, black, orange);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachement: fixed;
+  background-blend-mode: screen;
+  background-position: 10% 50%;
+  z-index: 1; }
+
+.wrapper {
+  height: 100%;
+  width: 100%; }
+
+.logo {
+  height: 250px;
+  line-height: 250px;
+  margin: 50px 30px;
+  margin-top: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  border: 3px solid white;
+  border-radius: 20px; }
+
+main {
+  position: absolute;
+  top: 250px;
+  bottom: 50px;
+  left: 0;
+  right: 0; }
+
+.maincontainer--outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+  z-index: 2; }
+
+.maincontainer--inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+
+.input__form {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  text-align: center !important;
+  background-color: transparent;
+  border: 2px solid white;
+  width: 200px;
+  height: 35px;
+  padding: 0px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-weight: 100; }
+
+option {
+  color: black !important; }
+
+.input__button {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 150px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 500;
+  cursor: pointer !important;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px; }
+
+footer {
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  line-height: 50px;
+  color: white;
+  border: 2px solid white;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 2px; }
+
+/*# sourceMappingURL=style.css.map */
