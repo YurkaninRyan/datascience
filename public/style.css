@@ -54,10 +54,9 @@ body {
   width: 100%; }
 
 .logo {
-  height: 250px;
-  line-height: 250px;
-  margin: 50px 30px;
-  margin-top: 20px;
+  height: 185px;
+  line-height: 185px;
+  margin: 20px 30px;
   position: absolute;
   top: 0;
   right: 0;
@@ -73,7 +72,7 @@ body {
 
 main {
   position: absolute;
-  top: 250px;
+  top: 205px;
   bottom: 50px;
   left: 0;
   right: 0; }
@@ -93,7 +92,7 @@ main {
   text-transform: capitalize;
   font-size: 1.3rem;
   text-align: center !important;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid white;
   width: 200px;
   height: 35px;
@@ -102,7 +101,9 @@ main {
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
   color: white;
-  font-weight: 100; }
+  vertical-align: middle;
+  font-weight: 100;
+  line-height: 35px; }
 
 option {
   color: black !important; }
@@ -113,7 +114,7 @@ option {
   text-align: center;
   width: 150px;
   height: 35px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid white;
   color: white;
   font-weight: 500;
