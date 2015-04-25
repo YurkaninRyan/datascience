@@ -5,6 +5,12 @@ html {
   width: 100%;
   font-size: 100%; }
 
+@media (max-width: 1340px) {
+  html {
+    font-size: 60% !important; } }
+@media (max-width: 825px) {
+  html {
+    font-size: 40% !important; } }
 *, *:after, *:before {
   box-sizing: inherit; }
 
