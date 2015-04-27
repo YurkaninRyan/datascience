@@ -123,8 +123,36 @@ main {
   font-size: 1.3rem;
   margin-bottom: 5px; }
 
-input__bg {
-  background-color: white; }
+.result {
+  height: 62px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  border: 3px solid white;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  line-height: 62px; }
+
+.result > span {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem; }
+
+#logo__hindenburg.result {
+  border-bottom-style: none;
+  top: 124px; }
+
+#logo__lusitania.result {
+  top: 0; }
+
+#logo__titanic.result {
+  top: 62px; }
 
 option {
   color: black !important; }

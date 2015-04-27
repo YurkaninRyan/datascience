@@ -13,7 +13,8 @@
   "author": "Ryan Yurkanin",
   "license": "MIT",
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "python-shell": "0.0.3"
   },
   "engines": {
     "node": "0.10.x"
