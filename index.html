@@ -18,21 +18,24 @@
 		<main>
 			<div class="maincontainer--outer">
 				<div class="maincontainer--inner">
-					<form method="evaluate.py" action="post" id="info">
-						<input type="text" name="age" class="input__form" placeholder="Age" min="1" max="200" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Age'"><br>
-						<select name="gender" class="input__form" required>
-							<option value="" disabled selected>Select a gender</option>
-						  	<option value="1">Male</option>
-						  	<option value="0">Female</option>
-						</select><br>
-						<select name="class" class="input__form"  required>
-							<option value="" disabled selected>Select a class</option>
-						  	<option value="0">Upper Class</option>
-						  	<option value="1">Middle Class</option>
-						  	<option value="2">Lower Class</option>
-						</select><br>
-						<button class="input__button">submit</button>
-					</form>
+					<div class="input__bg">
+						<form method="evaluate.py" action="post" id="info">
+							<p class="input__lister">Age:</p>
+							<input type="text" name="age" class="input__form" min="1" max="200" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Age'"><br>
+							<p class="lister">Gender:</p>
+							<select name="gender" class="input__form" required>
+							  	<option value="1">Male</option>
+							  	<option value="0">Female</option>
+							</select><br>
+							<p class="lister">Social Class:</p>
+							<select name="class" class="input__form"  required>
+							  	<option value="0">Upper Class</option>
+							  	<option value="1">Middle Class</option>
+							  	<option value="2">Lower Class</option>
+							</select><br>
+							<button class="input__button">submit</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</main>

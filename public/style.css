@@ -18,18 +18,22 @@ img, video {
   box-sizing: content-box; }
 
 ::-webkit-input-placeholder {
-  color: white; }
+  color: grey; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: white; }
+  color: grey; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: white; }
+  color: grey; }
 
 :-ms-input-placeholder {
-  color: white; }
+  color: grey; }
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 0.5s; }
 
 button:focus {
   outline: 0 !important; }
@@ -62,7 +66,6 @@ body {
 .logo {
   height: 185px;
   line-height: 185px;
-  margin: 20px 20px;
   position: absolute;
   top: 0;
   right: 0;
@@ -74,12 +77,14 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   border: 3px solid white;
-  border-radius: 10px;
-  background-color: rgba(50, 50, 50, 0.2); }
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  background-color: rgba(0, 0, 0, 0.4); }
 
 main {
   position: absolute;
-  top: 205px;
+  top: 185px;
   bottom: 50px;
   left: 0;
   right: 0; }
@@ -97,38 +102,47 @@ main {
 
 .input__form {
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   text-align: left !important;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: white;
   border: 2px solid white;
   width: 200px;
-  height: 35px;
   padding: 0px 10px;
   text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-  color: white;
+  margin-bottom: 2px;
+  color: black;
   vertical-align: middle;
-  font-weight: 100;
   line-height: 35px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  margin-bottom: 15px;
+  min-height: 35px;
+  max-height: 40px; }
+
+.input__lister {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 5px; }
+
+input__bg {
+  background-color: white; }
 
 option {
   color: black !important; }
 
 .input__button {
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
   width: 150px;
-  height: 35px;
-  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
   color: white;
   font-weight: 500;
   cursor: pointer !important;
   font-family: 'Playfair Display', serif;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  transition: background-color 0.5s; }
 
 footer {
   text-align: center;
@@ -147,6 +161,7 @@ footer {
   border-left-style: none;
   border-right-style: none;
   padding: 2px;
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 0.5s; }
 
 /*# sourceMappingURL=style.css.map */
