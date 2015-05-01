@@ -1,16 +1,15 @@
-var QueryString = parseurl();
-var chancesh = [];
-var survive = hind_predict(QueryString.age, QueryString.gender, QueryString.class);
-var result;
+    var QueryString = parseurl();
+    var chancesh = [];
+    var survive = hind_predict(QueryString.age, QueryString.gender, QueryString.class);
+    var result;
 
-if (survive) {
-    result = "<span style='color:#0E673C; font-weight:bold;'>You Lived</span>"
-} else {
-    result = "<span style='color:#B72833; font-weight:bold;'>You died</span>"
-}
-document.getElementById("logo__hindenburg").innerHTML = result + ', with a ' + chancesh + '% survival rate on the Hindenburg.';
-
-
+    if (survive) {
+        result = "<span style='color:#0E673C; font-weight:bold;'>You Lived</span>"
+    } else {
+        result = "<span style='color:#B72833; font-weight:bold;'>You died</span>"
+    }
+    document.getElementById("logo__hindenburg").innerHTML = result + ', with a ' + chancesh + '% survival rate on the Hindenburg.';
+    document.getElementById("logo__hindenburg").setAttribute("result", chancesh.toString());
 
 
 /* Function that gets the arguments from the URL */

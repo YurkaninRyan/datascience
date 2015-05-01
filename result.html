@@ -9,21 +9,19 @@
 	<link rel="stylesheet" href="./public/reset.css">
 	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
-<body>
+<body style="overflow:hidden;">
 	<div class="wrapper">
 		<!--TODO add a top part-->
 		<div id="bigresult" class="logo"></div>
 		<div id="logo__lusitania" class="result"></div>
-		<div id="logo__titanic" class="result">This is some sample text to prove a point.</div>
-		<div id="logo__hindenburg" class="result">This is some sample text to prove a point.</div>
+		<div id="logo__titanic" class="result"></div>
+		<div id="logo__hindenburg" class="result"></div>
 		<!--TODO add buttons-->
-		<main>
+		<main id="mainload">
 			<div class="maincontainer--outer">
-				<div class="maincontainer--inner">
-					<div style="background-color: white;" class="input__bg">
-						
-					</div>
+				<div class="maincontainer--inner" id="toload">
 				</div>
 			</div>
 		</main>
@@ -32,5 +30,100 @@
 	<script src="./public/lusitania_tree.js"></script>
 	<script src="./public/titanic_tree.js"></script>
 	<script src="./public/hindenburg_tree.js"></script>
+	<script>
+		var lusires = document.getElementById("logo__lusitania").getAttribute("result");
+		var hindres = document.getElementById("logo__hindenburg").getAttribute("result");
+		var titares = document.getElementById("logo__titanic").getAttribute("result");
+		var array = [parseInt(lusires, 10),  parseInt(titares, 10) , parseInt(hindres, 10)];
+		var colors = ["red","blue","green"];
+		var width = 900;
+		var canvas = d3.select(".maincontainer--inner")
+						.append("svg")
+						.attr("style", 'min-width:1252px; min-height:595px; height:80%; width:80%;')
+						.append("g")
+						.attr("transform", "translate(330,130)")
+
+		canvas.append("text")
+		    .attr("class", "x label")
+		    .attr("text-anchor", "end")
+		    .attr("x", 700)
+		    .attr("y", 400)
+		    .attr("font-size", 30)
+		    .text("Chance of survival (in precentage)");
+
+		canvas.append("text")
+		    .attr("class", "y label")
+		    .attr("text-anchor", "end")
+		    .attr("y", -175)
+		    .attr("x", -25)
+		    .attr("font-size", 30)
+		    .attr("dy", ".75em")
+		    .attr("transform", "rotate(-90)")
+		    .text("Disasters by name");
+		
+		var scale = d3.scale.linear()
+						.domain([0,100])
+						.range([0,width]);
+						
+		var scale2 = d3.scale.linear().domain([0,3]).range([300,0]);
+		
+		var names = ["Hindenburg","Titanic", "Lusitania"];
+	
+		var xaxis = d3.svg.axis().scale(scale).orient("bottom");
+		var yaxis = d3.svg.axis().scale(scale2).orient("left").ticks(3).tickFormat(function(d,i){if( i == 0){ return "";}else{return names[i-1];}});
+		
+		var bars = canvas.selectAll("rect") //get all rect on page none atm
+						 .data(array)
+						 .enter()//pointer to empty rect container
+						 .append("rect")//add rects to those place holders
+						 .attr("width",function(d){ return scale(d); })
+						 //the call to function(d) iterates for each entry in array
+						 .attr("height",50)
+						 .attr("y",function(d,i){return i * 100})
+						 //param 1 is the data param 2 is the index 
+						 .attr("fill",function(d,i){return colors[i]})
+						 .attr("fill-opacity", 0.5);
+						 
+		
+		canvas.append("g")
+					.attr("transform","translate(0,300)")
+					.call(xaxis);
+		canvas.append("g")
+					.attr("transform", "translate(0,0)")
+					.call(yaxis);
+		
+	</script>
+	<script>
+	setTimeout( function() {
+		var d = document.getElementById("toload");
+		d.className = d.className + " loaded" }, 300);
+
+		setTimeout( function(){var c = document.getElementById("mainload");
+		c.className = "mainload";}, 1200);
+	</script>
+	<style>
+		svg {
+			background-color:rgba(255,255,255,0.9);
+			box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.maincontainer--inner{
+			transform: translatex(120%);
+			transition: .75s linear;
+		}
+		.loaded {
+			transform: none;
+		}
+		text {
+			font-family: "Quicksand","sans-serif";
+		}
+		
+		main{
+			overflow: hidden;
+		}
+		.mainload{
+			overflow: auto;
+		}
+	</style>
 </body>
 </html>

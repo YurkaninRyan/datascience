@@ -1,14 +1,15 @@
-var QueryString = parseurl();
-var chancest = [];
-var survive = titanic_predict(QueryString.age, QueryString.gender, QueryString.class);
-var result;
+	var QueryString = parseurl();
+	var chancest = [];
+	var survive = titanic_predict(QueryString.age, QueryString.gender, QueryString.class);
+	var result;
 
-if (survive) {
-    result = "<span style='color:#0E673C; font-weight:bold;', serif;'>You Lived</span>"
-} else {
-    result = "<span style='color:#B72833; font-weight:bold;''>You died</span>"
-}
-document.getElementById("logo__titanic").innerHTML = result + ', with a ' + chancest[0] + '% survival rate on the Titanic.';
+	if (survive) {
+	    result = "<span style='color:#0E673C; font-weight:bold;', serif;'>You Lived</span>"
+	} else {
+	    result = "<span style='color:#B72833; font-weight:bold;''>You died</span>"
+	}
+	document.getElementById("logo__titanic").innerHTML = result + ', with a ' + chancest[0] + '% survival rate on the Titanic.';
+	document.getElementById("logo__titanic").setAttribute("result", chancest.toString());
 
 /* Function that gets the arguments from the URL */
 function parseurl () {

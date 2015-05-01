@@ -1,15 +1,16 @@
-var QueryString = parseurl();
-var chancesl = [];
-var survive = predict(QueryString.age, QueryString.gender, QueryString.class);
-var result;
+    var QueryString = parseurl();
+    var chancesl = [];
+    var survive = predict(QueryString.age, QueryString.gender, QueryString.class);
+    var result;
 
-if (survive) {
-    result = "<span style='color:#0E673C; font-weight:bold;'>You Lived</span>"
-} else {
-    result = "<span style='color:#B72833; font-weight:bold;'>You died</span>"
-}
-document.getElementById("logo__lusitania").innerHTML = result + ', with a ' + chancesl + '% survival rate on the Lusitania.';
+    if (survive) {
+        result = "<span style='color:#0E673C; font-weight:bold;'>You Lived</span>"
+    } else {
+        result = "<span style='color:#B72833; font-weight:bold;'>You died</span>"
+    }
 
+    document.getElementById("logo__lusitania").innerHTML = result + ', with a ' + chancesl + '% survival rate on the Lusitania.';
+    document.getElementById("logo__lusitania").setAttribute("result", chancesl.toString());
 
 
 
