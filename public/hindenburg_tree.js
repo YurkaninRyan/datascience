@@ -38,52 +38,66 @@ function parseurl () {
 
 /* Function that does the actual prediction of life or death. */
 function hind_predict(age, gender, ticket_class) {
+    //If you're younger then 46 years old.
     if (age <= 46.5000) {
-        chancesh.push(0.1);
+        // [11 died , 0 lived]
+        chancesh.push(0);
         return false;
-        // [11,0]
+    //If you're older then 46 years old
     }else {
+        //If you're younger then 61
         if (age <= 61.5000) {
+            //If you're younger then 55
             if (age <= 55.5000) {
+                //if you're younger then 51
                 if (age <= 51.0000) {
-                    chancesh.push(99);
+                    // [0 died , 1 lived]
+                    chancesh.push(100);
                     return true;
-                    // [0,1]
+                //If you're older then 51 years old but less then 55 years old
                 }else {
-                    chancesh.push(0.1);
+                    // [1 died , 0 lived]
+                    chancesh.push(0);
                     return false;
-                    // [1,0]
                 }
+            //If you're olden then 55 years old but less then 61 years old
             }else {
-                chancesh.push(98);
+                //[0 died , 3 lived]
+                chancesh.push(100);
                 return true;
-                // [0,3]
             }
+        //If you're older then 61 years old
         }else {
+            //if you're younger then 70 years old
             if (age <= 70.5000) {
-                chancesh(0.1);
+                // [4 died , 0 lived]
+                chancesh.push(0);
                 return false;
-                // [4,0]
+            //if you're older then 70 years old
             }else {
+                //If you're upper or middle class
                 if (ticket_class <= 2) {
+                    //if you're upper class
                     if (ticket_class <= 1) {
-                        chancesh.push(99);
+                        //[0 died , 1 lived]
+                        chancesh.push(100);
                         return true;
-                        // [0,1]
+                    //If you're middle class
                     }else {
+                        //[1 died , 4 lived]
                         if (Math.floor((Math.random() * 5) + 1) <= 1) {
                             chancesh.push(80);
                             return false;
                         }else {
                             chancesh.push(80);
                             return true;
-                        // [1,4]
                         }
                     }
+                //If you're lower class
                 }else {
-                    chancesh.push(0.1);
+                    //[1 died, 0 lived]
+                    chancesh.push(0);
                     return false;
-                    // [1,0]
                 }
             }
         }
