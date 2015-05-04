@@ -76,7 +76,7 @@
 						 .data(array)
 						 .enter()//pointer to empty rect container
 						 .append("rect")//add rects to those place holders
-						 .attr("width",function(d){ return scale(d); })
+						 .attr("width",function(d){ return 0; })
 						 //the call to function(d) iterates for each entry in array
 						 .attr("height",50)
 						 .attr("y",function(d,i){return i * 100})
@@ -91,28 +91,16 @@
 		canvas.append("g")
 					.attr("transform", "translate(0,0)")
 					.call(yaxis);
-		
-	</script>
-	<script>
-	setTimeout( function() {
-		var d = document.getElementById("toload");
-		d.className = d.className + " loaded" }, 300);
 
-		setTimeout( function(){var c = document.getElementById("mainload");
-		c.className = "mainload";}, 1200);
+		var bars = canvas.selectAll("rect").transition()
+                .delay(function(d,i){return 250 * i ;})
+                .duration(1500).attr("width",function(d){ return scale(d); });
+		
 	</script>
 	<style>
 		svg {
 			background-color:rgba(255,255,255,0.9);
 			box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-		}
-
-		.maincontainer--inner{
-			transform: translatex(120%);
-			transition: .75s linear;
-		}
-		.loaded {
-			transform: none;
 		}
 		text {
 			font-family: "Quicksand","sans-serif";
